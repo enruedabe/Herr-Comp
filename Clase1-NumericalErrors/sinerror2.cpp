@@ -2,6 +2,7 @@
 #include <cmath>
 
 double mysin(double x, int N);
+int factorial(int n);
 
 int main(int argc, char const *argv[])
 {

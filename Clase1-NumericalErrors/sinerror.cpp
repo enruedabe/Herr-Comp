@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {	std::cout.precision(15);
 	const double x=M_PI/3;
 	const double exact = std::sin(x);
-	for (double NMax = 0; NMax <= 10; ++NMax){
+	for (double NMax = 0; NMax <= 1000; ++NMax){
 		double diff =std::fabs(mysin(x,NMax)-exact)/exact;
 		std::cout <<NMax<< "\t";
 		std::cout <<diff<< "\n";
