@@ -1,0 +1,13 @@
+Instalacion
+	copiar repositorio de spack
+	entrar spack/bin
+Comandos Spack
+	spack list (da lista de paquetes instalables via spack)
+	./spack help (lista de comandos)
+	./spack install <paquete_de_interes> 
+SALIR DE spack/bin 
+	Usar paquetes de spack
+		source $HOME/repos/spack/share/spack/setup-env.sh 
+			[source $HOME/ruta](Para no tener que escribir la ruta de spack siempre y modificar el $PATH) 
+		./spack load <paquete a usar@<version>> 
+		./spack unload <paquete a usar@<version>> 
