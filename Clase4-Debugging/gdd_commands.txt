@@ -1,0 +1,7 @@
+Modo grafico: gdb -tui <ejecutable>
+	
+	Comandos de uso:
+		br <where>: break point
+		run : correr
+		next: siguiente LINEA
+		step: siguiente PASO
