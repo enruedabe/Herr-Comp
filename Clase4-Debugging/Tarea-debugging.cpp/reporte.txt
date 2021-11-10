@@ -1,0 +1,27 @@
+Lista de cambios:
+					En main: -Se inicializan las variables ii,jj y kk en 1,-1 y 0 respectivamente. La primera para eliminar la division por 0 cuando se usa la funcion foo.
+
+							 -Se elimina la doble inicilizacion de ii,jj y kk. (Despues de los cambios en baz y estos dos reportados en main el codigo compila sin sanitizers y valgrind reporta 3432 errores).
+
+							 -Se inicializan los arreglos x,y y z en NUll y se declaran por separado todos como double*.
+
+							 -Para cada conjunto de print_array se hace una peticion de memoria para cambiar el tamano del arreglo,un for para rellenar el arreglo y al final se elimina esa peticion de memoria para evitar leaks.
+
+							 -Se imprimen los valores arrojados por las foo(ii,jj),foo(jj,ii) y baz(25.9).
+
+
+					En baz: -Se elimina variable v pues nunca se usa
+
+							-Se cambia condicion del if para que tenga como argumento una variable bool (x=0 > x==0).
+
+							-Se hace que en caso de que x sea 0 la funcion retorne 0 (antes no indicaba que retornaba).
+
+							-Se agrega un else para que en caso de que x sea diferente de 0 la funcion retorne la raiz cuadrada de x.
+
+
+					En general: Pasamos el codigo final por clang-format para que sea mas facil de leer. 
+Analisis Final:
+
+	Podemos suponer que el motivo principal de el programa era hacer un par de operaciones basicas y llenar de distintas formas los arreglos x,y,z variando su tamano. Vemos que al inicio impresiones de tipo print_array(z,NY+NX) no tienen sentido sin embargo es posible darselo al pedir memoria y cambiar los tamanos de los arreglos.
+
+	Podemos esperar que estos arreglos esten continuos en memoria inicialmente, sin embargo cada vez que los eliminamos y volvemos a pedir memoria las direcciones en memoria cambian y ya no podemos asegurar esto.
