@@ -1,0 +1,4 @@
+Pasos :
+	1) Compilar con -g -pg -sanitizers
+	2) Ejecutar gprof ./a.out gmon.out >report.txt
+	3) En el archivo .txt estara el reporte de tiempo.

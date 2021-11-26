@@ -1,0 +1,5 @@
+Pasos :
+	1) Compilar con -g -sanitizers
+	2) Ejecutar perf stat ./a.out -> Tiempos y perdidas de cache generales
+	3) Ejecutar perf record ./a.out -> .data
+		3.1) perf report , se obtiene el reporte 

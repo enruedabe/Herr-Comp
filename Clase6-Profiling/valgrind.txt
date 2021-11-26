@@ -1,0 +1,5 @@
+Pasos:
+	1) Compilar -g -sanitizers
+	2) valgrind --toolcachegrind ./a.out ->cachegrind.out.xxxx
+	3) cg annotate --aout=yes cachegrind.out.xxxx >report.txt
+	
