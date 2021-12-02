@@ -1,0 +1,7 @@
+g++ <archivo> ; ./<ejectuable>
+
+for LEVEL in 0 1 2 3 fast; do echo "LEVEL: ${LEVEL}"; g++ -O$LEVEL <archivo.cpp>; ./<ejecutable> ;done
+
+for LEVEL in 0 1 2 3 fast; do echo "LEVEL: ${LEVEL}"; g++ -O$LEVEL <archivo.cpp>; ./<ejecutable> |cut -d " " -f 4;done
+
+for LEVEL in 0 1 2 3 fast; do echo -n "${LEVEL}"; gcc -O$LEVEL cache_blocking.c; ./a.out |cut -d " " -f 4 ; done
