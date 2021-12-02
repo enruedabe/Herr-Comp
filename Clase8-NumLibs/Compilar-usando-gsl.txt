@@ -1,0 +1,3 @@
+g++ -std=c++17 -static -I $HOME/local/include -L $HOME/local/lib gsl-bessel.cpp -lgsl -lgslcblas
+
+	El -static hace posible ejecutar
